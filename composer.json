@@ -1,0 +1,73 @@
+{
+    "name": "juling/think-foundation",
+    "license": "Apache-2.0",
+    "require": {
+        "php": "^8.2",
+        "alibabacloud/aliyun-log-php-sdk": "^0.6.3",
+        "aliyuncs/oss-sdk-php": "^2.7",
+        "endroid/qr-code": "^5.0",
+        "elasticsearch/elasticsearch": "^8.10",
+        "firebase/php-jwt": "^6.10",
+        "intervention/image": "^3.4",
+        "topthink/framework": "^8.0",
+        "overtrue/easy-sms": "^2.6",
+        "overtrue/pinyin": "^5.3",
+        "overtrue/socialite": "^4.9",
+        "phpoffice/phpspreadsheet": "^2.0",
+        "qcloud/cos-sdk-v5": "^2.6",
+        "qiniu/php-sdk": "^7.12",
+        "w7corp/easywechat": "^6.15",
+        "workerman/crontab": "^1.0",
+        "workerman/gateway-worker": "^3.1",
+        "yansongda/pay": "^3.6"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.14",
+        "phpstan/phpstan": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "Juling\\": "src/"
+        },
+        "files": [
+            "src/Foundation/Support/helpers.php"
+        ]
+    },
+    "extra": {
+        "think": {
+            "services": [
+                "Juling\\Auth\\AuthServiceProvider",
+                "Juling\\Captcha\\CaptchaServiceProvider",
+                "Juling\\Database\\DatabaseServiceProvider",
+                "Juling\\DataPermission\\DataPermissionServiceProvider",
+                "Juling\\Excel\\ExcelServiceProvider",
+                "Juling\\Filesystem\\FilesystemServiceProvider",
+                "Juling\\Flowable\\FlowableServiceProvider",
+                "Juling\\Foundation\\FoundationServiceProvider",
+                "Juling\\Image\\ImageServiceProvider",
+                "Juling\\IP\\IPServiceProvider",
+                "Juling\\Monitor\\MonitorServiceProvider",
+                "Juling\\OperateLog\\OperateLogServiceProvider",
+                "Juling\\Pay\\PayServiceProvider",
+                "Juling\\Pinyin\\PinyinServiceProvider",
+                "Juling\\Protection\\ProtectionServiceProvider",
+                "Juling\\Pusher\\PusherServiceProvider",
+                "Juling\\QrCode\\QrCodeServiceProvider",
+                "Juling\\Region\\RegionServiceProvider",
+                "Juling\\Search\\SearchServiceProvider",
+                "Juling\\Sms\\SmsServiceProvider",
+                "Juling\\Snowflake\\SnowflakeServiceProvider",
+                "Juling\\Social\\SocialServiceProvider",
+                "Juling\\Tenant\\TenantServiceProvider",
+                "Juling\\Wechat\\WechatServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
