@@ -30,7 +30,7 @@
             "Juling\\": "src/"
         },
         "files": [
-            "src/Foundation/Support/helpers.php"
+            "src/Support/helpers.php"
         ]
     },
     "extra": {
