@@ -6,7 +6,7 @@ namespace Juling\Foundation\Contract;
 
 interface CommonServiceInterface
 {
-    const DEFAULT_BATCH_SIZE = 1000;
+    const int DEFAULT_BATCH_SIZE = 1000;
 
     /**
      * 插入记录并返回 主键 值
