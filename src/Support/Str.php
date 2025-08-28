@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Juling\Support;
+namespace Juling\Foundation\Support;
 
 use think\helper\Str as BaseStr;
 

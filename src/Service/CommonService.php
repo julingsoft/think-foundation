@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Juling\Foundation\Service;
 
-use Juling\Foundation\Exception\CustomException;
 use Juling\Foundation\Contract\CommonServiceInterface;
 use Juling\Foundation\Contract\CurdRepositoryInterface;
+use Juling\Foundation\Exception\CustomException;
 
 /**
  * @method CurdRepositoryInterface getRepository()

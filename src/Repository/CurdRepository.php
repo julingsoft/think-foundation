@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Juling\Foundation\Repository;
 
-use Juling\Foundation\Contract\CurdRepositoryInterface;
 use Exception;
+use Juling\Foundation\Contract\CurdRepositoryInterface;
 use think\Collection;
 use think\Model;
 
