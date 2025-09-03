@@ -6,10 +6,14 @@ namespace Juling\Foundation\Support;
 
 use ReflectionClass;
 use ReflectionProperty;
+use think\Collection;
 
 trait ArrayHelper
 {
-    public function setData(array $row): void
+    /**
+     * 将数组批量赋值到对象属性
+     */
+    public function loadData(array $row): void
     {
         foreach ($row as $col => $val) {
             if (! is_null($val)) {
@@ -21,9 +25,41 @@ trait ArrayHelper
         }
     }
 
+    /**
+     * 将对象转换到数组
+     */
     public function toArray(bool $allProperty = false): array
     {
         return $allProperty ? $this->allProperty() : $this->effectiveProperty();
+    }
+
+    /**
+     * 获取数据表数据
+     */
+    public function toEntity(bool $allProperty = false): array
+    {
+        $data = [];
+        foreach ($this->toArray($allProperty) as $key => $val) {
+            $data[Str::snake($key)] = is_array($val) ? json_encode($val, JSON_UNESCAPED_UNICODE) : $val;
+        }
+
+        return $data;
+    }
+
+    /**
+     * 获取JSON数据
+     */
+    public function toJson(bool $allProperty = false): string
+    {
+        return json_encode($this->toArray($allProperty), JSON_UNESCAPED_UNICODE);
+    }
+
+    /**
+     * 获取Collection
+     */
+    public function collect(bool $allProperty = false): Collection
+    {
+        return new Collection($this->toArray($allProperty));
     }
 
     public function has(string $property): bool
